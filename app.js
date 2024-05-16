@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const fs = require('fs');
+require('dotenv').config();
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/api', require('./routes'));
 
-if (fs.existsSync('uploads')) {
+if (!fs.existsSync('uploads')) {
   fs.mkdirSync('uploads');
 }
 
