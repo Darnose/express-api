@@ -96,7 +96,7 @@ const PostController = {
     }
 
     if (post.authorId !== req.user.userId) {
-      return res.status(404).json({ error: 'Нет доступа' });
+      return res.status(403).json({ error: 'Нет доступа' });
     }
 
     try {
