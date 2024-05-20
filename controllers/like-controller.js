@@ -28,6 +28,7 @@ const LikeController = {
       res.status(500).json({ error: 'Internal server error' });
     }
   },
+
   unLikePost: async (req, res) => {
     const { id } = req.params;
     const userId = req.user.userId;
